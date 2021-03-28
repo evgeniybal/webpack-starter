@@ -1,0 +1,46 @@
+<div
+  style="width: 800px; padding: 20px; border: 1px solid lightgray !important"
+  class="border-primary"
+>
+  <form name="$ctrl.form">
+    <!-- <pre>{{ $ctrl.user || JSON }}</pre> -->
+
+    <div class="form-row">
+      <div class="col-sm-4">
+        <input
+          name="firstName"
+          type="text"
+          class="form-control"
+          placeholder="First name"
+          ng-model="$ctrl.user.firstName"
+          required
+          yup
+          schema="$ctrl.schema"
+        />
+        <error-message field="$ctrl.form['firstName']"></error-message>
+      </div>
+      <div class="col-sm-4">
+        <input
+          name="lastName"
+          type="text"
+          class="form-control"
+          placeholder="Last name"
+          ng-model="$ctrl.user.lastName"
+          required
+          yup
+          schema="$ctrl.schema"
+        />
+        <error-message field="$ctrl.form['lastName']"></error-message>
+      </div>
+      <div class="col" ng-disabled="$ctrl.form.$invalid">
+        <button
+          class="btn btn-primary"
+          ng-disabled="$ctrl.form.$invalid"
+          ng-click="$ctrl.addUser()"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+<div
+  style="width:840px; margin: 30px; padding: 20px; border: 1px solid lightgray; background-color: whitesmoke"
+>
+  <h2>User List</h2>
+  <br />
+  <!-- <code>User: {{ $ctrl.user || JSON }}</code><br/>
+  <code>List: {{ $ctrl.users || JSON }}</code>  -->
+
+  <user-form on-add-user="$ctrl.handleAddUser(user)"></user-form>
+  <user-list
+    users="$ctrl.users"
+    on-delete="$ctrl.handleDeleteUser(user)"
+  ></user-list>
+</div>
